@@ -1,0 +1,28 @@
+-- Creating a car dealer store database
+
+CREATE TABLE car_store (id INTEGER PRIMARY KEY, brand TEXT, price INTEGER, year INTEGER, state TEXT);
+
+INSERT INTO car_store VALUES (1, "chevy", 1500, 2001, "really good");
+INSERT INTO car_store VALUES (2, "toyota", 4000, 2012, "excellent");
+INSERT INTO car_store VALUES (3, "subaru", 2000, 2001, "good");
+INSERT INTO car_store VALUES (4, "chevy", 3000, 2020, "excellent");
+INSERT INTO car_store VALUES (5, "toyota", 1900, 1999, "bad");
+INSERT INTO car_store VALUES (6, "subaru", 5000, 2023, "excellent");
+INSERT INTO car_store VALUES (7, "chevy", 3500, 2020, "really good");
+INSERT INTO car_store VALUES (8, "toyota", 2500, 2015, "good");
+INSERT INTO car_store VALUES (9, "subaru", 1700, 2000, "good");
+INSERT INTO car_store VALUES (10, "chevy", 3000, 2009, "bad");
+INSERT INTO car_store VALUES (11, "toyota", 1000, 1990, "really bad");
+INSERT INTO car_store VALUES (12, "subaru", 2500, 2020, "good");
+INSERT INTO car_store VALUES (13, "chevy", 1100, 1800, "really bad");
+INSERT INTO car_store VALUES (14, "toyota", 4000, 2022, "excellent");
+INSERT INTO car_store VALUES (15, "subaru", 3000, 2000, "good");
+
+-- Display the price ordered by it where prices are higher than 2000
+SELECT * FROM car_store WHERE price >2000 ORDER BY price
+
+--Show the cars that are in bad state
+SELECT * FROM car_store WHERE state='bad'
+
+-- Show the average price of the cars
+SELECT AVG(price) FROM car_store
