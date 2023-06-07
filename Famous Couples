@@ -1,0 +1,39 @@
+/* Create table about the people and what they do here */
+CREATE TABLE female_actors (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+INSERT INTO female_actors VALUES (1, "Nicole Kidman",55);
+INSERT INTO female_actors VALUES (2, "Angelina Jolie", 48);
+INSERT INTO female_actors VALUES (3, "Jennifer Garner", 51);
+INSERT INTO female_actors VALUES (4, "Miley Cyrus", 30);
+INSERT INTO female_actors VALUES (5, "Mila Kunis", 39);
+INSERT INTO female_actors VALUES (6, "Blake Lively",35);
+
+
+CREATE TABLE male_actors (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+INSERT INTO male_actors VALUES (1, "Ryan Reynolds",46);
+INSERT INTO male_actors VALUES (2, "Ashton Kutcher",45);
+INSERT INTO male_actors VALUES (3, "Tom Cruise",60);
+INSERT INTO male_actors VALUES (4, "Ben Affleck",50);
+INSERT INTO male_actors VALUES (5, "Liam Hemsworth",33);
+INSERT INTO male_actors VALUES (6, "Brad Pitt",59);
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY, name TEXT, lead TEXT);
+INSERT INTO movies VALUES (1, "Green lantern", "Ryan Reynolds");
+INSERT INTO movies VALUES (2, "Mr and Mrs Smith", "Brad Pitt");
+INSERT INTO movies VALUES (3, "Days of thunder", "Tom Cruise");
+INSERT INTO movies VALUES (4, "Pearl HArbor", "Ben Affleck");
+INSERT INTO movies VALUES (5, "The Last Song", "Miley Cyrus");
+INSERT INTO movies VALUES (6, "Friends with Benefits", "Mila Kunis");
+
+CREATE TABLE couples (id INTEGER PRIMARY KEY, male_id INTEGER, female_id INTEGER);
+INSERT INTO couples VALUES (1, 3,1);
+INSERT INTO couples VALUES (2, 6,2);
+INSERT INTO couples VALUES (3, 4,3);
+INSERT INTO couples VALUES (4, 5,4);
+INSERT INTO couples VALUES (5, 2,5);
+INSERT INTO couples VALUES (6, 1,6);
+
+SELECT couples.id, male_actors.name, female_actors.name FROM couples
+    JOIN male_actors
+    ON male_actors.id=couples.male_id
+    JOIN female_actors
+    ON female_actors.id=couples.female_id;
