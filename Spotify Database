@@ -39,3 +39,58 @@ LIMIT 10;
 
 SELECT artist_name, ROUND(avg(duration_ms)) AS avg_duration FROM BIT_DB.Spotifydata
 GROUP BY artist_name;
+
+#1. What are the top 10 artists according to popularity?
+
+SELECT track_name, artist_name, popularity FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY popularity DESC
+LIMIT 10;
+
+#2. Whats the average duration of songs by artist?
+
+SELECT artist_name, ROUND(avg(duration_ms)) AS avg_duration FROM BIT_DB.Spotifydata
+GROUP BY artist_name;
+
+#3. How many songs contain the word love in their name?
+
+SELECT track_name, count(track_name) FROM BIT_DB.Spotifydata
+WHERE track_name LIKE '%love%';
+
+#4. What songs were featured and what was their popularity?
+
+SELECT track_name, popularity FROM BIT_DB.Spotifydata
+WHERE track_name LIKE '%feat%';
+
+#5. Who is the artist with the most danceable songs and whats the average danceability?
+
+SELECT artist_name, avg(danceability) FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY popularity DESC
+LIMIT 1;
+
+#6. What artists have 3 or more songs on the database?
+
+#7. What are the max and min levels of energy?
+
+SELECT distinct track_name, MAX(energy) AS max, MIN(energy) AS min FROM BIT_DB.Spotifydata
+
+#8. What are the songs that have at least a danceability of 0.700, or energy levels of 0.600?
+
+SELECT track_name FROM BIT_DB.Spotifydata
+WHERE danceability >0.699
+OR energy >0.599;
+
+#9. Which songs were the 10 loudest while having a tempo of less than a 100?
+
+SELECT track_name, loudness, tempo FROM BIT_DB.Spotifydata
+WHERE tempo< 100
+ORDER BY loudness DESC
+LIMIT 10;
+
+#10. Which songs include the word you on their name and whats their popularity?
+
+SELECT track_name, popularity FROM BIT_DB.Spotifydata
+WHERE track_name LIKE '%you%'
+ORDER BY popularity DESC;
+
