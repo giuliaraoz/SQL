@@ -1,0 +1,26 @@
+background(186, 145, 20); // wooden table
+ellipse(200, 200, 350, 350); // plate
+ellipse(200, 200, 300, 300); 
+//fish
+fill(161, 156, 156);
+bezier(252,313,347,130,124,161,298,303); 
+strokeWeight(7);
+point(251,205);
+//bowl of rice
+strokeWeight(4);
+fill(245, 242, 242);
+arc(156,249,95,-78,-1,176);
+noFill();
+arc(156,259,119,78,-12,196);
+line(214,250,101,248);
+//carrots
+strokeWeight(0.30);
+fill(247, 150, 24);
+triangle(99,143,288,139,93,105);
+triangle(135,182,320,154,99,144);
+strokeWeight(10);
+stroke(19, 102, 32);
+line(75,113,95,124);
+line(50,138,95,130);
+line(92,192,114,168);
+line(126,171,84,152);
